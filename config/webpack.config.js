@@ -12,7 +12,7 @@ module.exports = {
     'index.tsx'
   ],
   output: {
-    filename: 'app.js',
+    filename: 'assets/js/app.js',
     publicPath: '/dist',
     path: path.resolve('dist')
   },
