@@ -4,3 +4,13 @@
 
 @import 'bourbon';
 @import 'neat';
+
+/* Test Bourbon-Neat */
+
+div.test {
+    @include outer-container;
+}
+
+div.hide {
+    @include appearance(none);
+}

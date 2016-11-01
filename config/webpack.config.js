@@ -3,10 +3,9 @@ var path = require('path');
 var WebpackNotifierPlugin = require('webpack-notifier');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+/* Settings */
 var port = 3000;
 var assets = 'assets/';
-
-console.log(require('node-neat').includePaths[1]);
 
 module.exports = {
     /* devtool: 'eval', */
@@ -33,9 +32,11 @@ module.exports = {
             {
               test: /\.scss$/,
               exclude: /(node_modules)/,
-              loader: ExtractTextPlugin.extract('css!sass?' +
-                'includePaths[]=' + encodeURIComponent(require('node-bourbon').includePaths) +
-                '&includePaths[]=' + encodeURIComponent(require('node-neat').includePaths[1]))
+              loader: ExtractTextPlugin.extract(
+                    'css!sass?' +
+                    'includePaths[]=' + require('node-bourbon').includePaths[0] +
+                    '&includePaths[]=' + require('node-neat').includePaths[1]
+                )
             }
         ]
     },
