@@ -6,6 +6,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var port = 3000;
 var assets = 'assets/';
 
+console.log(require('node-neat').includePaths[1]);
+
 module.exports = {
     /* devtool: 'eval', */
     devtool: 'source-map',
@@ -28,12 +30,12 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] },
-            // { test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] }
             {
               test: /\.scss$/,
               exclude: /(node_modules)/,
-              // loader: "style!css!sass",
-              loader: ExtractTextPlugin.extract('css!sass'),
+              loader: ExtractTextPlugin.extract('css!sass?' +
+                'includePaths[]=' + encodeURIComponent(require('node-bourbon').includePaths) +
+                '&includePaths[]=' + encodeURIComponent(require('node-neat').includePaths[1]))
             }
         ]
     },
@@ -44,7 +46,7 @@ module.exports = {
         // Add the HMR plugin
         new webpack.HotModuleReplacementPlugin(),
         new WebpackNotifierPlugin({ alwaysNotify: true }),
-        new ExtractTextPlugin(assets + 'css/style.css', {
+        new ExtractTextPlugin(assets + 'css/[name].css', {
             allowChunks: true
           })
     ]

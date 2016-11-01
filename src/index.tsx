@@ -7,7 +7,7 @@ const { AppContainer } = require('react-hot-loader');
 // Import our App container (which we will create in a second)
 import App from 'containers/App';
 
-// Import CSS ???
+// Import CSS
 require('sass/app.scss');
 
 // Tell Typescript that there is a global variable called module - see below
