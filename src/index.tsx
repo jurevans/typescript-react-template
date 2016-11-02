@@ -24,7 +24,10 @@ render(
   rootEl
 )
 
-// Handle hot reloading actions from Webpack
+/*
+    Handle hot reloading actions from Webpack.
+    How should we handle this in production?
+*/
 if (module.hot) {
   module.hot.accept('./containers/App', () => {
     // If we receive a HMR action for our App container, then reload it
