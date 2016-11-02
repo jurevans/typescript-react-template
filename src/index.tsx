@@ -1,10 +1,10 @@
 // Import React and React DOM
 import * as React from 'react';
 import { render } from 'react-dom';
-// Import the Hot Module Reloading App Container – more on why we use 'require' below
+// Import the Hot Module Reloading App Container
 const { AppContainer } = require('react-hot-loader');
 
-// Import our App container (which we will create in a second)
+// Import our App container
 import App from 'containers/App';
 
 // Import CSS

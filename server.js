@@ -5,13 +5,13 @@ var port = 3000;
 var host = 'localhost';
 
 new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true
+    publicPath: config.output.publicPath,
+    hot: true,
+    historyApiFallback: true
 }).listen(port, host, function (err, result) {
-  if (err) {
-    return console.log(err);
-  }
+    if (err) {
+        return console.log(err);
+    }
 
-  console.log('Listening at http://' + host + ':' + port + '/');
+    console.log('Listening at http://' + host + ':' + port + '/');
 });

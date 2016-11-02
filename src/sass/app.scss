@@ -11,6 +11,8 @@ div.test {
     @include outer-container;
 }
 
+/* Test Bourbon */
+
 div.hide {
     @include appearance(none);
 }
